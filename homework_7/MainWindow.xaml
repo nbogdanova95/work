@@ -1,0 +1,46 @@
+﻿<Window x:Name="but_dep_name" x:Class="homework.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:homework"
+        mc:Ignorable="d"
+        Title="Control" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="Delete_temp" Content="Удалить" HorizontalAlignment="Left" Margin="228,334,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="0.425,0.65" Height="43" FontSize="15"/>
+        <Button x:Name="Save_temp" Content="Сохранить" HorizontalAlignment="Left" Margin="42,334,0,0" VerticalAlignment="Top" Width="118" RenderTransformOrigin="0.425,0.65" Height="43" FontSize="15"/>
+        <TextBox x:Name="NameBox" 
+                 HorizontalAlignment="Left" 
+                 Height="23" Margin="436,81,0,0" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Top" 
+                 Width="120"
+                 Text="{Binding SelectedValue.Name, ElementName=DataGrid, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 />
+        <TextBox x:Name="SurName" 
+                 HorizontalAlignment="Left" 
+                 Height="23" Margin="436,160,0,0" 
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top" 
+                 Width="118"
+                 Text="{Binding SelectedValue.SurName, ElementName=DataGrid, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 />
+
+        <TextBlock HorizontalAlignment="Left" Margin="435,60,0,0" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" Height="16" Width="119"/>
+        <TextBlock HorizontalAlignment="Left" Margin="436,139,0,0" TextWrapping="Wrap" Text="Фамилия" VerticalAlignment="Top" Height="16" Width="54"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,28,0,0" TextWrapping="Wrap" Text="Список сотрудников" VerticalAlignment="Top" Height="16" Width="269"/>
+        <DataGrid Name="DataGrid" AutoGenerateColumns="False"
+                  ItemsSource="{Binding}" IsReadOnly="True" Margin="10,44,397,123">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="ID" Binding="{Binding ID}" 
+                                    Header="ID" IsReadOnly="True" Width="Auto"/>
+                <DataGridTextColumn x:Name="Name" Binding="{Binding Name}" 
+                                    Header="Name" IsReadOnly="True" Width="Auto"/>
+                <DataGridTextColumn x:Name="SurName_" Binding="{Binding SurName}" 
+                                    Header="SurName" IsReadOnly="True" Width="Auto"/>
+                <DataGridTextColumn x:Name="Department" Binding="{Binding DepId}" 
+                                    Header="Department" IsReadOnly="True" Width="Auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
