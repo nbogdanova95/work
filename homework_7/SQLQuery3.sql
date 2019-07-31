@@ -1,5 +1,0 @@
-﻿INSERT INTO Employee (Name, SurName, DepId) VALUES ('Olga', 'Sinicina', '1')
-INSERT INTO Employee (Name, SurName, DepId) VALUES ('Pavel', 'Petrov', '2')
-INSERT INTO Employee (Name, SurName, DepId) VALUES ('Semen', 'Drozdov', '3')
-INSERT INTO Employee (Name, SurName, DepId) VALUES ('Svetlana', 'Gashina', '1')
-INSERT INTO Employee (Name, SurName, DepId) VALUES ('Polya', 'Popova', '1')
